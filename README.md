@@ -1,6 +1,6 @@
 # Vityrathi Project: Stock Portfolio Simulator
 
-Vityrathi is an original, terminal-based Python project for learning how trading
+Terminal-based Python project for learning how trading
 decisions, portfolio allocation, and synthetic market conditions affect returns.
 It uses hard-coded company data and values only. It does not connect to a broker, use live
 prices, or handle real money, as it is a simulator just to train.
