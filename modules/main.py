@@ -7,14 +7,14 @@ from modules.models import Portfolio, ValidationError
 from modules.reports import plot_equity, text_report
 from modules.simulation import Simulator
 from modules.storage import JsonStore, export_equity
-
+#Table titles 
 def _show_market(sim):
     print("\nSymbol  Name                  Sector        Price       Change")
     print("-" * 67)
     for stock in sim.market.stocks.values():
         print(f"{stock.symbol:<7} {stock.name:<21} {stock.sector:<13} "
               f"₹{stock.price:>8.2f}  {stock.change_percent:>7.2f}%")
-
+#Portfolio showcase
 def _show_portfolio(sim):
     portfolio = sim.engine.portfolio
     print(f"\nCash: ₹{portfolio.cash:,.2f}")
@@ -32,7 +32,7 @@ def _read_int(prompt, minimum=1):
     if value < minimum:
         raise ValueError(f"value must be at least {minimum}")
     return value
-
+#Options
 def interactive():
     sim = Simulator()
     last_result = None
@@ -107,7 +107,7 @@ def interactive():
                 print("Please choose a number from the menu.")
         except (ValueError, ValidationError, OSError, KeyError, TypeError) as error:
             print(f"Unable to complete that action: {error}")
-
+#Optional_matplotlib
 def demo(argv=None):
     parser = argparse.ArgumentParser(description="modules stock-market simulator")
     parser.add_argument("--days", type=int, default=30)
